@@ -4,6 +4,7 @@ import com.BetaFrameWork.Base;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.openqa.selenium.WebDriver;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
@@ -13,7 +14,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class Hooks extends Base {
-
     @Before
     public void runsBeforeAnyScenario() {
 

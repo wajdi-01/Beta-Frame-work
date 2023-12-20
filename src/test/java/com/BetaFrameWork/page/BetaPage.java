@@ -1,6 +1,7 @@
 package com.BetaFrameWork.page;
 
 import com.BetaFrameWork.Base;
+import com.BetaFrameWork.utils.ConfigUtils;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,6 +33,11 @@ public class BetaPage extends Base {
     public void successfulLoginAssert() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         Assert.assertTrue(logoutBtnAssert.isDisplayed());
+    }
+    public void loadUrl() {
+        String baseUrl = ConfigUtils.getInstance().getBaseUrl();
+        driver.get(baseUrl);
+
     }
 
 }
