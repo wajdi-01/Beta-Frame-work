@@ -3,6 +3,8 @@ package com.BetaFrameWork.page;
 import com.BetaFrameWork.Base;
 import com.BetaFrameWork.utils.ConfigUtils;
 import org.junit.Assert;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -20,6 +22,20 @@ public class BetaPage extends Base {
     public static WebElement loginButton;
     @FindBy(xpath = "//span[contains(text(),'Logout')]")
     public static WebElement logoutBtnAssert;
+
+    @FindBy(xpath = "//span[@class='MuiIconButton-label']//*[name()='svg']")
+    public static WebElement addButton;
+    @FindBy(xpath = "//input[@type='text']")
+    public static WebElement todoItem;
+    @FindBy(xpath = "//div[@class='sc-kgflAQ eoofHA']//button[@type='button']")
+    public static WebElement createTodoButton;
+    @FindBy(xpath = "//div[@class='sc-breuTD dIVhJd']")
+    public static WebElement addTodoAssert;
+    @FindBy(xpath = "//div[@role='alert']")
+    public static WebElement failedLoginErrorMessage;
+
+
+
 
     //**Methods**//
 
@@ -39,5 +55,26 @@ public class BetaPage extends Base {
         driver.get(baseUrl);
 
     }
+    public void clickOnAddButton() {
+        addButton.click();
+    }
+    public void fillTodoItem() {
+        todoItem.sendKeys("New Todo");
+    }
+    public void clickOnCreateTodoButton() {
+        createTodoButton.click();
+    }
+    public void addTodoSuccessfullyAssert() {
+        Assert.assertTrue(addTodoAssert.isDisplayed());
+        String newTodoItem = addTodoAssert.getText();
+        Assert.assertEquals("New Todo", newTodoItem);
 
+    }
+    public void enterInvalidEmailAndPassword() {
+        emailBox.sendKeys("qatest@gmail.com");
+        passwordBox.sendKeys("Test.1234567");
+    }
+    public void failedLoginAssert() {
+        Assert.assertTrue(failedLoginErrorMessage.isDisplayed());
+    }
 }

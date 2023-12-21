@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/specs/features",
         glue = "com/BetaFrameWork",
-        tags = "@TestOne",
+        //tags = "@TestThree",
         plugin = {"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","html:target/report.html"},
 
         //"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},

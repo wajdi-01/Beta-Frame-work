@@ -16,7 +16,7 @@ public class BetaSteps extends Base {
         this.betaPage = new BetaPage();
     }
 
-
+    //**Successful Login**//
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
         PageFactory.initElements(driver, BetaPage.class );
@@ -37,4 +37,25 @@ public class BetaSteps extends Base {
     betaPage.successfulLoginAssert();
        System.out.println("Assert step !");
     }
+
+    //**Add a todo**//
+    @When("the user clicks on the PLUS button")
+    public void the_user_clicks_on_the_plus_button() {
+    betaPage.clickOnAddButton();
+    }
+    @When("adds a new todo with a title")
+    public void adds_a_new_todo_with_a_title() {
+    betaPage.fillTodoItem();
+    }
+    @When("the user clicks on CREATE TODO button")
+    public void the_user_clicks_on_create_todo_button() {
+    betaPage.clickOnCreateTodoButton();
+    }
+    @Then("the todo should be added successfully")
+    public void the_todo_should_be_added_successfully() {
+    betaPage.addTodoSuccessfullyAssert();
+    }
+
+
+
 }
