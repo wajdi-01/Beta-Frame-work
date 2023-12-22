@@ -6,6 +6,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+import ru.yandex.qatools.ashot.shooting.ViewportPastingDecorator;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -22,8 +23,9 @@ public class Hooks extends Base {
     public void runsAfterAnyScenario(Scenario scenario) throws IOException {
         // Take a screenshot of the whole web page
         BufferedImage image = new AShot()
-                .shootingStrategy(ShootingStrategies.viewportPasting(ShootingStrategies.scaling(1.0f), 1000))
-                .takeScreenshot(driver).getImage();
+                .shootingStrategy(new ViewportPastingDecorator(ShootingStrategies.scaling(1.0f)))
+                .takeScreenshot(driver)
+                .getImage();
 
         // Convert the screenshot to bytes
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

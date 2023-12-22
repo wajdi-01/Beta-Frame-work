@@ -37,6 +37,7 @@ public class BetaSteps extends Base {
     betaPage.successfulLoginAssert();
        System.out.println("Assert step !");
     }
+
     //**Failed Login**//
     @When("the user enters invalid username  and password")
     public void the_user_enters_invalid_username_and_password() {
@@ -47,4 +48,27 @@ public class BetaSteps extends Base {
     public void an_error_message_should_be_displayed() {
     betaPage.invalidUserNameErrorMessageAssert();
     }
+
+
+    //**Add a todo**//
+    @When("the user clicks on the PLUS button")
+    public void the_user_clicks_on_the_plus_button() {
+    betaPage.clickOnAddButton();
+    }
+    @When("adds a new todo with a title")
+    public void adds_a_new_todo_with_a_title() {
+    betaPage.fillTodoItem();
+    }
+    @When("the user clicks on CREATE TODO button")
+    public void the_user_clicks_on_create_todo_button() {
+    betaPage.clickOnCreateTodoButton();
+    }
+    @Then("the todo should be added successfully")
+    public void the_todo_should_be_added_successfully() {
+    betaPage.addTodoSuccessfullyAssert();
+    }
+
+
+
+
 }
