@@ -1,5 +1,5 @@
 
-  Feature: BETA Login to the application
+  Feature: Login to the application
 
     @TestOne
     Scenario: Successful Login
