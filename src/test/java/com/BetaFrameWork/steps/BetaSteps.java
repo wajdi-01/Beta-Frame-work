@@ -1,6 +1,6 @@
 package com.BetaFrameWork.steps;
 
-import com.BetaFrameWork.Base;
+import com.BetaFrameWork.utils.Base;
 import com.BetaFrameWork.page.BetaPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -16,7 +16,7 @@ public class BetaSteps extends Base {
         this.betaPage = new BetaPage();
     }
 
-
+    //**Successful Login**//
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
         PageFactory.initElements(driver, BetaPage.class );
@@ -36,5 +36,15 @@ public class BetaSteps extends Base {
     public void the_user_should_be_redirected_to_the_dashboard() {
     betaPage.successfulLoginAssert();
        System.out.println("Assert step !");
+    }
+    //**Failed Login**//
+    @When("the user enters invalid username  and password")
+    public void the_user_enters_invalid_username_and_password() {
+        PageFactory.initElements(driver, BetaPage.class );
+        betaPage.entersInvalidUsernameAndPassword();
+    }
+    @Then("an error message should be displayed")
+    public void an_error_message_should_be_displayed() {
+    betaPage.invalidUserNameErrorMessageAssert();
     }
 }

@@ -1,6 +1,6 @@
 package com.BetaFrameWork.page;
 
-import com.BetaFrameWork.Base;
+import com.BetaFrameWork.utils.Base;
 import com.BetaFrameWork.utils.ConfigUtils;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -20,6 +20,9 @@ public class BetaPage extends Base {
     public static WebElement loginButton;
     @FindBy(xpath = "//span[contains(text(),'Logout')]")
     public static WebElement logoutBtnAssert;
+    @FindBy(xpath = "//div[contains(text(),'We could not find the email in the database')]")
+    public static WebElement invalidUserName;
+
 
     //**Methods**//
 
@@ -39,5 +42,13 @@ public class BetaPage extends Base {
         driver.get(baseUrl);
 
     }
+    public void entersInvalidUsernameAndPassword() {
+        emailBox.sendKeys("ABCD1234@gmail.com");
+        passwordBox.sendKeys("Test.102030");
+    }
+    public void invalidUserNameErrorMessageAssert() {
+        Assert.assertTrue("Error message is Not Displayed ! ",invalidUserName.isDisplayed());
+    }
+
 
 }

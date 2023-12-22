@@ -1,4 +1,4 @@
-package com.BetaFrameWork;
+package com.BetaFrameWork.utils;
 
 
 import org.openqa.selenium.WebDriver;

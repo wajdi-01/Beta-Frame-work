@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/specs/features",
+        features = "src/test/resources/features",
         glue = "com/BetaFrameWork",
-        tags = "@TestOne",
+        tags = "@TestTow",
         plugin = {"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","html:target/report.html"},
 
         //"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},

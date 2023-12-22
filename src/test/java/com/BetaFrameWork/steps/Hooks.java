@@ -1,10 +1,9 @@
 package com.BetaFrameWork.steps;
 
-import com.BetaFrameWork.Base;
+import com.BetaFrameWork.utils.Base;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.openqa.selenium.WebDriver;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
