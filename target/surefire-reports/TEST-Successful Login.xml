@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="Failed Login" time="4.806" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="Successful Login" time="5.552" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -56,9 +56,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="Failed Login" classname="Failed Login" time="0"/>
-  <testcase name="the user is on the login page" classname="Failed Login" time="4.337"/>
-  <testcase name="the user enters invalid username  and password" classname="Failed Login" time="0.226"/>
-  <testcase name="clicks the login button" classname="Failed Login" time="0.062"/>
-  <testcase name="an error message should be displayed" classname="Failed Login" time="0.168"/>
+  <testcase name="Successful Login" classname="Successful Login" time="0"/>
+  <testcase name="the user is on the login page" classname="Successful Login" time="4.936"/>
+  <testcase name="the user enters valid username  and password" classname="Successful Login" time="0.176"/>
+  <testcase name="clicks the login button" classname="Successful Login" time="0.046"/>
+  <testcase name="the user should be redirected to the dashboard" classname="Successful Login" time="0.3"/>
 </testsuite>
