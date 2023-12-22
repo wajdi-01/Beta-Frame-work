@@ -1,0 +1,6 @@
+com\BetaFrameWork\TestRunner.class
+com\BetaFrameWork\utils\ConfigUtils.class
+com\BetaFrameWork\page\BetaPage.class
+com\BetaFrameWork\steps\BetaSteps.class
+com\BetaFrameWork\utils\Base.class
+com\BetaFrameWork\steps\Hooks.class
