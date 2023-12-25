@@ -1,6 +1,7 @@
 package com.BetaFrameWork.steps;
 
 import com.BetaFrameWork.utils.Base;
+import com.google.common.collect.ImmutableMap;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -13,11 +14,15 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
+import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
+
 public class Hooks extends Base {
     @Before
-    public void runsBeforeAnyScenario() {
-
-
+    public void setAllureEnvironment() {
+        allureEnvironmentWriter(
+                ImmutableMap.<String, String>builder().put("Browser", "Chrome").put("Browser.Version", "70.0.3538.77")
+                        .put("URL", "https://todo.qacart.com/login").build(),
+                System.getProperty("user.dir") + "/allure-results/");
     }
 
     @After
