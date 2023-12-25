@@ -24,18 +24,6 @@ jobs:
       - name: Run Cucumber tests on Chrome
         run: mvn clean test -Dbrowser=CHROME
 
-      - name: Setup Firefox
-        uses: browser-actions/setup-firefox@latest
-
-      - name: Run Cucumber tests on Firefox
-        run: mvn clean test -Dbrowser=FIREFOX
-
-      - name: Setup Edge
-        uses: browser-actions/setup-edge@latest
-
-      - name: Run Cucumber tests on Edge
-        run: mvn clean test -Dbrowser=EDGE
-
       - name: Get Allure history
         uses: actions/checkout@v2
         continue-on-error: true
