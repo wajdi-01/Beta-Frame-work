@@ -18,12 +18,7 @@ import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnviro
 
 public class Hooks extends Base {
     @Before
-    public void setAllureEnvironment() {
-        allureEnvironmentWriter(
-                ImmutableMap.<String, String>builder().put("Browser", "Chrome").put("Browser.Version", "70.0.3538.77")
-                        .put("URL", "https://todo.qacart.com/login").build(),
-                System.getProperty("user.dir") + "/allure-results/");
-    }
+
 
     @After
     public void runsAfterAnyScenario(Scenario scenario) throws IOException {
