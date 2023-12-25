@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"skipped","Mon Dec 25 14:45:48 GMT 2023","Mon Dec 25 14:45:48 GMT 2023","18","","Login to the application","","Failed Login","","Failed Login",""
+"skipped","Mon Dec 25 14:45:48 GMT 2023","Mon Dec 25 14:45:48 GMT 2023","41","","Login to the application","","Successful Login","","Successful Login",""
