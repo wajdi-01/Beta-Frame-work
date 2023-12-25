@@ -6,7 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
 
@@ -27,10 +29,15 @@ public class Base {
                 driver = new ChromeDriver(options);
             }
             case "FIREFOX" -> {
-                driver = new FirefoxDriver();
+                FirefoxOptions options = new FirefoxOptions();
+                options.addArguments("--headless");
+                driver = new FirefoxDriver(options);
             }
             case "EDGE" -> {
-                driver = new EdgeDriver();
+                EdgeOptions options = new EdgeOptions();
+                options.addArguments("--headless");
+                driver = new EdgeDriver(options);
+
             }
             default -> {
                 throw new RuntimeException("Browser is not supported");
