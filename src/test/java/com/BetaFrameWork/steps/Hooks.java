@@ -17,6 +17,7 @@ public class Hooks extends Base {
     @Before
     public void runsBeforeAnyScenario() {
 
+
     }
 
     @After

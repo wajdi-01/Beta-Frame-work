@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.qameta.allure.Description;
 import org.openqa.selenium.support.PageFactory;
 
 public class BetaSteps extends Base {
@@ -17,6 +18,7 @@ public class BetaSteps extends Base {
     }
 
     //**Successful Login**//
+    @Description("Environnement : Windows 10, Chrome 99")
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
         PageFactory.initElements(driver, BetaPage.class );
