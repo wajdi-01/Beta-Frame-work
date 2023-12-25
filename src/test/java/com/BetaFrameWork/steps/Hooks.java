@@ -14,10 +14,10 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnvironmentWriter;
+
 
 public class Hooks extends Base {
-    @Before
+
 
 
     @After
