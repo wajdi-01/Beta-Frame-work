@@ -1,12 +1,16 @@
 name: Selenium E2E test
 
-on: [ push ]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Set up JDK 17
         uses: actions/setup-java@v2
@@ -17,8 +21,20 @@ jobs:
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@latest
 
-      - name: Run Test
-        run: mvn clean test
+      - name: Run Cucumber tests on Chrome
+        run: mvn clean test -Dbrowser=CHROME
+
+      - name: Setup Firefox
+        uses: browser-actions/setup-firefox@latest
+
+      - name: Run Cucumber tests on Firefox
+        run: mvn clean test -Dbrowser=FIREFOX
+
+      - name: Setup Edge
+        uses: browser-actions/setup-edge@latest
+
+      - name: Run Cucumber tests on Edge
+        run: mvn clean test -Dbrowser=EDGE
 
       - name: Get Allure history
         uses: actions/checkout@v2
@@ -30,15 +46,3 @@ jobs:
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
         id: allure-report
-        with:
-          allure_results: allure-results
-          gh_pages: gh-pages
-          allure_report: allure-report
-          allure_history: allure-history
-
-      - name: Deploy report to Github Pages
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-          PERSONAL_TOKEN: ${{ secrets.TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history
