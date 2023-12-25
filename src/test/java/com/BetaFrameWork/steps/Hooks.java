@@ -1,7 +1,6 @@
 package com.BetaFrameWork.steps;
 
 import com.BetaFrameWork.utils.Base;
-import com.google.common.collect.ImmutableMap;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -14,11 +13,12 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-
-
 public class Hooks extends Base {
+    @Before
+    public void runsBeforeAnyScenario() {
 
 
+    }
 
     @After
     public void runsAfterAnyScenario(Scenario scenario) throws IOException {
