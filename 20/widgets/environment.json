@@ -1,0 +1,1 @@
+[{"values":["Production"],"name":"Environment"},{"values":["https://todo.qacart.com/login"],"name":"Production_Url"},{"values":["Version 120.0.6099.111"],"name":"Browser_Chrome"},{"values":["Version 121.0"],"name":"Browser_FireFox"},{"values":["Version 120.0.2210.91"],"name":"Browser_Edge"},{"values":["ubuntu-latest"],"name":"Runs-on"}]
